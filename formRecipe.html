@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Создание рецепта</title>
+    <link rel="stylesheet" href="./pages/form.css">
+</head>
+<body class="body">
+<nav class="nav">
+    <div class="nav__container container">
+        <ul class="nav__items list">
+            <li class="nav__item"><a href="#" class="nav__link link">Рецепты</a></li>
+            <li class="nav__item nav__item_active"><a href="#" class="nav__link link">Мои подписки</a></li>
+            <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
+            <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
+            <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a></li>
+
+        </ul>
+        <ul class="nav__items list">
+            <li class="nav__item"><a href="#" class="nav__link link">Изменить пароль</a></li>
+            <li class="nav__item"><a href="#" class="nav__link link">Выход</a></li>
+        </ul>
+    </div>
+</nav>
+<main class="main container">
+    <div class="main__header">
+        <h1 class="main__title">Создание рецепта</h1>
+    </div>
+    <div class="form-container">
+        <form class="form">
+            <div class="form__group">
+                <label for="email" class="form__label">Название рецепта</label>
+                <div class="form__field-group">
+                    <input type="email" id="email" class="form__input">
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <div class="form__group">
+                <p class="form__label">Теги</p>
+                <div class="form__field-group">
+                    <div class="tags">
+                        <div class="tags__item">
+                            <input type="checkbox" name="tags" id="breakfast" class="tags__checkbox tags__checkbox_style_orange">
+                            <label for="breakfast" class="tags__label">Завтрак</label>
+                        </div>
+                        <div class="tags__item">
+                            <input type="checkbox" id="lunch" class="tags__checkbox tags__checkbox_style_green" checked>
+                            <label for="lunch" class="tags__label">Обед</label>
+                        </div>
+                        <div class="tags__item">
+                            <input type="checkbox" id="dinner" class="tags__checkbox tags__checkbox_style_purple" checked>
+                            <label for="dinner" class="tags__label">Ужин</label>
+                        </div>
+                    </div>
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="description" class="form__label">Описание</label>
+                <div class="form__field-group">
+                    <textarea name="description" id="description" rows="8" class="form__textarea"></textarea>
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <button class="button button_style_blue">Создать рецепт</button>
+        </form>
+    </div>
+
+
+</main>
+<footer class="footer">
+    <div class="footer__container container">
+        <a href="#" class="footer__brand link">Продуктовый помощник</a>
+        <ul class="footer__items">
+            <li class="footer__item"><a href="#" class="footer__link link">Об авторе </a></li>
+            <li class="footer__item"><a href="#" class="footer__link link">Технологии</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

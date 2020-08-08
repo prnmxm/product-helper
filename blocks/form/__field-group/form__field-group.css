@@ -1,0 +1,7 @@
+.form__field-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    max-width: 370px;
+    width: 100%;
+}
