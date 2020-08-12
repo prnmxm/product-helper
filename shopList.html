@@ -9,53 +9,55 @@
     <link rel="stylesheet" href="./pages/shopList.css">
 </head>
 <body class="body">
-<nav class="nav">
-    <div class="nav__container container">
-        <ul class="nav__items list">
-            <li class="nav__item"><a href="#" class="nav__link link">Рецепты</a></li>
-            <li class="nav__item"><a href="#" class="nav__link link">Мои подписки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
-            <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
-            <li class="nav__item nav__item_active"><a href="#" class="nav__link link">Список покупок</a></li>
+<header class="header">
+    <nav class="nav">
+        <div class="nav__container container">
+            <ul class="nav__items list">
+                <li class="nav__item"><a href="#" class="nav__link link">Рецепты</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Мои подписки</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
+                <li class="nav__item nav__item_active"><a href="#" class="nav__link link">Список покупок</a></li>
 
-        </ul>
-        <ul class="nav__items list">
-            <li class="nav__item"><a href="#" class="nav__link link">Изменить пароль</a></li>
-            <li class="nav__item"><a href="#" class="nav__link link">Выход</a></li>
-        </ul>
-    </div>
-</nav>
+            </ul>
+            <ul class="nav__items list">
+                <li class="nav__item"><a href="#" class="nav__link link">Изменить пароль</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Выход</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 <main class="main container">
     <div class="main__header">
         <h1 class="main__title">Список покупок</h1>
     </div>
     <div class="card-list card-list_column">
-        <div class="shopping-list">
-            <div class="shopping-list__item">
+        <ul class="shopping-list">
+            <li class="shopping-list__item">
                 <div class="recipe recipe_reverse">
-                    <img src="./images/testCardImg.png" alt="" class="recipe__image recipe__image_big">
+                    <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
                     <p class="recipe__text"><span class="icon-time"></span> 20 мин.</p>
                 </div>
                 <a href="#" class="shopping-list__button link">Удалить</a>
-            </div>
-            <div class="shopping-list__item">
+            </li>
+            <li class="shopping-list__item">
                 <div class="recipe recipe_reverse">
-                    <img src="./images/testCardImg.png" alt="" class="recipe__image recipe__image_big">
+                    <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
                     <p class="recipe__text"><span class="icon-time"></span> 20 мин.</p>
                 </div>
                 <a href="#" class="shopping-list__button link">Удалить</a>
-            </div>
-            <div class="shopping-list__item">
+            </li>
+            <li class="shopping-list__item">
                 <div class="recipe recipe_reverse">
-                    <img src="./images/testCardImg.png" alt="" class="recipe__image recipe__image_big">
+                    <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
                     <p class="recipe__text"><span class="icon-time"></span> 20 мин.</p>
                 </div>
                 <a href="#" class="shopping-list__button link">Удалить</a>
-            </div>
-        </div>
+            </li>
+        </ul>
         <button class="button button_style_blue">Скачать список</button>
 
 
