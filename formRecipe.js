@@ -34,7 +34,7 @@ formDropdownItems.addEventListener('click', (e) => {
 })
 addIng.addEventListener('click', (e) => {
     if(nameIngredient.value && cantidad.value) {
-        formFieldIngredinet.insertAdjacentHTML('afterend',`<div class="form__field-item-ingredient">${nameIngredient.value} ${cantidad.value}</div>`)
+        formFieldIngredinet.insertAdjacentHTML('afterend',`<div class="form__field-item-ingredient">${nameIngredient.value} ${cantidad.value} ${cantidadVal.textContent}</div>`)
         nameIngredient.value = ''
         cantidad.value = ''
     }
