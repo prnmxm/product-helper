@@ -5,6 +5,7 @@
     height: 100%;
     color: #000000;
     cursor: pointer;
+    position: relative;
 }
 .nav__item:last-child {
     margin-right: 0;

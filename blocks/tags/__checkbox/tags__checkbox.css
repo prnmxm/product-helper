@@ -8,6 +8,7 @@
     -webkit-appearance: none;
     outline: none;
     margin-right: 8px;
+    cursor: pointer;
 }
 .tags__checkbox:checked {
     background: currentColor;

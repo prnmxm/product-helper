@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./pages/single.css">
 </head>
 <body class="body">
+<header class="header">
     <nav class="nav">
         <div class="nav__container container">
             <ul class="nav__items list">
@@ -16,7 +17,7 @@
                 <li class="nav__item"><a href="#" class="nav__link link">Мои подписки</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
-                <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a><span class="badge badge_style_blue nav__badge" id="counter"></span></li>
 
             </ul>
             <ul class="nav__items list">
@@ -25,14 +26,15 @@
             </ul>
         </div>
     </nav>
+</header>
     <main class="main container">
-        <div class="single-card">
-            <img src="./images/testCardImg.png" alt="" class="single-card__image">
+        <div class="single-card" data-id="371">
+            <img src="./images/testCardImg.png" alt="какой-то текст" class="single-card__image">
             <div class="single-card__info">
                 <div class="single-card__header-info">
                     <h1 class="single-card__title">Французские тосты</h1>
                     <div class="single-card__favorite">
-                        <button class="button button_style_none"><span class="icon-favorite icon-favorite_big"></span></button>
+                        <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite icon-favorite_big"></span></button>
                         <div class="single-card__favorite-tooltip tooltip">Добавить в избранное</div>
                     </div>
                 </div>
@@ -46,23 +48,25 @@
                     <p class="single-card__text"><span class="icon-user"></span> Вероника Чернова</p>
                 </div>
                 <ul class="single-card__items">
-                    <li class="single-card__item"><button class="button button_style_blue"><span class="icon-plus"></span> Добавить рецепт</button></li>
-                    <li class="single-card__item"><button class="button button_style_light-blue button_size_auto"> Добавить рецепт</button></li>
+                    <li class="single-card__item"><button class="button button_style_blue" name="purchpurchases" data-out><span class="icon-plus"></span> Добавить в покупки</button></li>
+                    <li class="single-card__item"><button class="button button_style_light-blue button_size_auto" name="subscribe" data-out>Подписаться на автора</button></li>
                 </ul>
                 <div class="single-card__section">
                     <h3 class="single-card__section-title">Ингридиенты:</h3>
                     <div class="single-card__items single-card__items_column">
-                        <p class="single-card__text single-card__section-text">Яйцо - 2 шт.</p>
-                        <p class="single-card__text single-card__section-text">Молоко - 200 мл.</p>
-                        <p class="single-card__text single-card__section-text">Тосты - 4 шт.</p>
-                        <p class="single-card__text single-card__section-text">Сахар 2 сл.л.</p>
+                        <p class=" single-card__section-item">Яйцо - 2 шт.</p>
+                        <p class=" single-card__section-item">Молоко - 200 мл.</p>
+                        <p class=" single-card__section-item">Тосты - 4 шт.</p>
+                        <p class=" single-card__section-item">Сахар 2 сл.л.</p>
+                        <p class=" single-card__section-item">Яйцо - 2 шт.</p>
+                        <p class=" single-card__section-item">Молоко - 200 мл.</p>
                     </div>
                 </div>
                 <div class="single-card__section">
                     <h3 class="single-card__section-title">Описание:</h3>
-                    <p class="single-card__text single-card__section-text">Смешать молоко с сахаром, добавить яйца, тщательно все взбить.
+                    <p class=" single-card__section-text">Смешать молоко с сахаром, добавить яйца, тщательно все взбить.
                         Обмакнуть тосты в смесь и жарить на сливочном масле до золотистой корочки.</p>
-                    <p class="single-card__text single-card__section-text">Полить сверху сиропом топинамбура и украсить ягодами.</p>
+                    <p class=" single-card__section-text">Полить сверху сиропом топинамбура и украсить ягодами.</p>
                 </div>
             </div>
         </div>
@@ -76,5 +80,11 @@
             </ul>
         </div>
     </footer>
+<script src="./js/config/config.js"></script>
+<script src="./js/components/SingleCard.js"></script>
+<script src="./js/components/Header.js"></script>
+
+<script src="./js/api/Api.js"></script>
+<script src="singlePage.js"></script>
 </body>
 </html>
