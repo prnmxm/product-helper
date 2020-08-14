@@ -17,7 +17,7 @@
                 <li class="nav__item nav__item_active"><a href="#" class="nav__link link">Мои подписки</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
-                <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a> <span class="badge badge_style_blue nav__badge" id="counter"></span></li>
 
             </ul>
             <ul class="nav__items list">
@@ -64,12 +64,14 @@
                 <label for="nameIngredient" class="form__label">Ингредиенты</label>
                 <div class="form__field-group">
                     <div class="form__field-group__ingredientes">
-                        <input type="text" id="nameIngredient" class="form__input">
-                        <input type="text" id="cantidad" class="form__input">
-                        <label for="cantidad">шт.</label>
+                        <div class="form__dropdown">
+                            <input type="text" id="nameIngredient" class="form__input">
+                            <div class="form__dropdown-items"></div>
+                        </div>
+                        <input type="number" id="cantidad" class="form__input">
+                        <label for="cantidad" class="form__label" id="cantidadVal">шт.</label>
                     </div>
-
-                    <span class="form__ingredient-link">Добавить ингредиент</span>
+                    <span class="form__ingredient-link" id="addIng">Добавить ингредиент</span>
                     <span class="form__error"></span>
                 </div>
             </div>
@@ -111,5 +113,9 @@
         </ul>
     </div>
 </footer>
+<script src="./js/config/config.js"></script>
+<script src="./js/components/Header.js"></script>
+<script src="./js/api/Api.js"></script>
+<script src="formRecipe.js"></script>
 </body>
 </html>

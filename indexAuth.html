@@ -17,7 +17,7 @@
                   <li class="nav__item"><a href="#" class="nav__link link">Мои подписки</a></li>
                   <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
                   <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
-                  <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a> <span class="badge badge_style_blue nav__badge">27</span></li>
+                  <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a> <span class="badge badge_style_blue nav__badge" id="counter"></span></li>
 
               </ul>
               <ul class="nav__items list">
@@ -46,102 +46,102 @@
             </form>
         </div>
         <div class="card-list">
-            <div class="card">
-                <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
-                <div class="card__body">
-                    <a class="card__title link" href="#" target="_blank">Французские тосты</a>
-                    <ul class="card__items">
-                        <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
-                        <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
-                        <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
-                    </ul>
-                    <div class="card__items card__items_column">
-                        <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
-                        <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <button class="button button_style_light-blue"><span class="icon-plus button__icon"></span>Добавить в покупки</button>
-                    <button class="button button_style_none"><span class="icon-favorite"></span></button>
+        <div class="card" data-id="120">
+            <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
+            <div class="card__body">
+                <a class="card__title link" href="#" target="_blank">Французские тосты</a>
+                <ul class="card__items">
+                    <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
+                    <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
+                    <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
+                </ul>
+                <div class="card__items card__items_column">
+                    <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
+                    <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
                 </div>
             </div>
-            <div class="card">
-                <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
-                <div class="card__body">
-                    <a class="card__title link" href="#" target="_blank">Французские тосты</a>
-                    <ul class="card__items">
-                        <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
-                        <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
-                        <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
-                    </ul>
-                    <div class="card__items card__items_column">
-                        <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
-                        <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <button class="button button_style_light-blue"><span class="icon-plus button__icon"></span>Добавить в покупки</button>
-                    <button class="button button_style_none"><span class="icon-favorite"></span></button>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
-                <div class="card__body">
-                    <a class="card__title link" href="#" target="_blank">Французские тосты</a>
-                    <ul class="card__items">
-                        <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
-                        <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
-                        <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
-                    </ul>
-                    <div class="card__items card__items_column">
-                        <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
-                        <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <button class="button button_style_light-blue"><span class="icon-plus button__icon"></span>Добавить в покупки</button>
-                    <button class="button button_style_none"><span class="icon-favorite"></span></button>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
-                <div class="card__body">
-                    <a class="card__title link" href="#" target="_blank">Французские тосты</a>
-                    <ul class="card__items">
-                        <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
-                        <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
-                        <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
-                    </ul>
-                    <div class="card__items card__items_column">
-                        <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
-                        <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <button class="button button_style_light-blue"><span class="icon-plus button__icon"></span>Добавить в покупки</button>
-                    <button class="button button_style_none"><span class="icon-favorite"></span></button>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
-                <div class="card__body">
-                    <a class="card__title link" href="#" target="_blank">Французские тосты</a>
-                    <ul class="card__items">
-                        <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
-                        <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
-                        <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
-                    </ul>
-                    <div class="card__items card__items_column">
-                        <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
-                        <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <button class="button button_style_light-blue"><span class="icon-plus button__icon"></span>Добавить в покупки</button>
-                    <button class="button button_style_none"><span class="icon-favorite"></span></button>
-                </div>
+            <div class="card__footer">
+                <button class="button button_style_light-blue" name="purchpurchases" data-out><span class="icon-plus button__icon"></span>Добавить в покупки</button>
+                <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite"></span></button>
             </div>
         </div>
+        <div class="card" data-id="121">
+            <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
+            <div class="card__body">
+                <a class="card__title link" href="#" target="_blank">Французские тосты</a>
+                <ul class="card__items">
+                    <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
+                    <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
+                    <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
+                </ul>
+                <div class="card__items card__items_column">
+                    <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
+                    <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
+                </div>
+            </div>
+            <div class="card__footer">
+                <button class="button button_style_light-blue" name="purchpurchases" data-out><span class="icon-plus button__icon"></span>Добавить в покупки</button>
+                <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite"></span></button>
+            </div>
+        </div>
+        <div class="card" data-id="122">
+            <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
+            <div class="card__body">
+                <a class="card__title link" href="#" target="_blank">Французские тосты</a>
+                <ul class="card__items">
+                    <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
+                    <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
+                    <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
+                </ul>
+                <div class="card__items card__items_column">
+                    <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
+                    <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
+                </div>
+            </div>
+            <div class="card__footer">
+                <button class="button button_style_light-blue" name="purchpurchases" data-out><span class="icon-plus button__icon"></span>Добавить в покупки</button>
+                <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite"></span></button>
+            </div>
+        </div>
+        <div class="card" data-id="123">
+            <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
+            <div class="card__body">
+                <a class="card__title link" href="#" target="_blank">Французские тосты</a>
+                <ul class="card__items">
+                    <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
+                    <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
+                    <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
+                </ul>
+                <div class="card__items card__items_column">
+                    <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
+                    <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
+                </div>
+            </div>
+            <div class="card__footer">
+                <button class="button button_style_light-blue" name="purchpurchases" data-out><span class="icon-plus button__icon"></span>Добавить в покупки</button>
+                <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite"></span></button>
+            </div>
+        </div>
+        <div class="card" data-id="124">
+            <a href="#" class="link" target="_blank"><img src="./images/testCardImg.png" alt="Какой-то текст" class="card__image"></a>
+            <div class="card__body">
+                <a class="card__title link" href="#" target="_blank">Французские тосты</a>
+                <ul class="card__items">
+                    <li class="card__item"><span class="badge badge_style_green">Обед</span></li>
+                    <li class="card__item"><span class="badge badge_style_orange">Завтрак</span></li>
+                    <li class="card__item"><span class="badge badge_style_purple">Ужин</span></li>
+                </ul>
+                <div class="card__items card__items_column">
+                    <p class="card__text"><span class="icon-time"></span> 20 мин.</p>
+                    <p class="card__text"><span class="icon-user"></span> Вероника Чернова</p>
+                </div>
+            </div>
+            <div class="card__footer">
+                <button class="button button_style_light-blue" name="purchpurchases" data-out><span class="icon-plus button__icon"></span>Добавить в покупки</button>
+                <button class="button button_style_none" name="favorites" data-out><span class="icon-favorite"></span></button>
+            </div>
+        </div>
+    </div>
         <nav class="pagination" aria-label="Search results pages">
             <ul class="pagination__container">
                 <li class="pagination__item"><a class="pagination__link link" href="#"><span class="icon-left"></span></a></li>
@@ -163,5 +163,11 @@
             </ul>
         </div>
     </footer>
+  <script src="./js/config/config.js"></script>
+  <script src="./js/components/CardList.js"></script>
+  <script src="./js/components/Header.js"></script>
+
+  <script src="./js/api/Api.js"></script>
+  <script src="indexAuth.js"></script>
 </body>
 </html>
