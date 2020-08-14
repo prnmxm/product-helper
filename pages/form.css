@@ -34,6 +34,11 @@
 @import "../blocks/form/__info-text/form__info-text.css";
 @import "../blocks/form/__forgot-link/form__forgot-link.css";
 @import "../blocks/form/__textarea/form__textarea.css";
+@import "../blocks/form/__ingredientes/form__field-group__ingredientes.css";
+@import "../blocks/form/__ingredient-link/form__ingerident-link.css";
+@import "../blocks/form/__field-group/_time/form__field-group_time.css";
+@import "../blocks/form/__file/form__file.css";
+@import "../blocks/form/__file-button/form__file-button.css";
 
 @import "../blocks/tags/tags.css";
 @import "../blocks/tags/__item/tags__item.css";

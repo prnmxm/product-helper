@@ -1,14 +1,17 @@
-.form__forgot-link {
+.form__ingredient-link {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     color: #000000;
-    margin-left: 28px;
     cursor: pointer;
+    justify-self: start;
+    position: relative;
+    grid-row: auto;
+    grid-column: 1/-1;
 }
-.form__forgot-link:before {
+.form__ingredient-link:before {
     content: '';
     position: absolute;
     width: 100%;

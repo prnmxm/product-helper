@@ -12,6 +12,7 @@
     line-height: 20px;
     color: #000000;
     padding: 12px 9px;
+    width: 100%;
 }
 .form__textarea:focus {
     border: 1px solid #4A61DD;

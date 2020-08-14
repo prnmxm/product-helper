@@ -61,9 +61,38 @@
                 </div>
             </div>
             <div class="form__group">
+                <label for="nameIngredient" class="form__label">Ингредиенты</label>
+                <div class="form__field-group">
+                    <div class="form__field-group__ingredientes">
+                        <input type="text" id="nameIngredient" class="form__input">
+                        <input type="text" id="cantidad" class="form__input">
+                        <label for="cantidad">шт.</label>
+                    </div>
+
+                    <span class="form__ingredient-link">Добавить ингредиент</span>
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="time" class="form__label">Время приготовления</label>
+                <div class="form__field-group form__field-group_time">
+                    <input type="text" id="time" class="form__input">
+                    <label for="time">минут</label>
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <div class="form__group">
                 <label for="description" class="form__label">Описание</label>
                 <div class="form__field-group">
                     <textarea name="description" id="description" rows="8" class="form__textarea"></textarea>
+                    <span class="form__error"></span>
+                </div>
+            </div>
+            <div class="form__group">
+                <span class="form__label">Загрузить фото</span>
+                <div class="form__field-group">
+                    <label for="file" class="form__file-button">Выбрать файл</label>
+                    <input type="file" class="form__file" name="file" id="file">
                     <span class="form__error"></span>
                 </div>
             </div>

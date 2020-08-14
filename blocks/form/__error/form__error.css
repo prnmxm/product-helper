@@ -6,6 +6,8 @@
     font-size: 12px;
     line-height: 14px;
     color: #FF0000;
+    justify-self: start;
+    grid-column: 1/-1;
 }
 .form__error:before {
     content: '';
