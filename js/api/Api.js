@@ -1,6 +1,7 @@
+
 class Api {
   constructor(apiUrl) {
-    this.apiUrl =  apiUrl;
+    this.apiUrl = apiUrl;
   }
   getPurchases = () => {
     return fetch(`${this.apiUrl}purchases`, {
