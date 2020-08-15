@@ -4,15 +4,14 @@ class Header {
         this.api = api;
         this.counterNum = null;
     }
-    updateCounter = (type) => {
-        if(type === 'add') {
-            this.counterNum = ++this.counterNum;
-            console.log(this.counterNum)
-            this.counter.textContent = this.counterNum;
-        } else if(type === 'remove')  {
-            this.counterNum = --this.counterNum;
-            this.counter.textContent = this.counterNum;
-        }
+
+    plusCounter = () => {
+        this.counterNum = ++this.counterNum;
+        this.counter.textContent = this.counterNum;
+    }
+    minusCounter = () => {
+        this.counterNum = --this.counterNum;
+        this.counter.textContent = this.counterNum;
     }
     setCounter = () => {
         this.api.getPurchases().then(e=>{

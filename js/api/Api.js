@@ -1,8 +1,6 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-
 class Api {
   constructor(apiUrl) {
-    this.apiUrl = proxyurl + apiUrl;
+    this.apiUrl =  apiUrl;
   }
   getPurchases = () => {
     return fetch(`${this.apiUrl}purchases`, {

@@ -1,128 +1,53 @@
-class SingleCard {
-    constructor(selector, api, counter, userAuth, card) {
-        this.selector = selector;
-        this.api = api;
-        this.counter = counter;
-        this.userAuth = userAuth;
-        this.card = card;
-        this.followEvent = this.followEvent.bind(this)
+class SingleCard extends MainCards{
+    _eventUserAuth (e) {
+        super._eventUserAuth(e);
+        if (this.target && this.target.name === 'purchpurchases') {
+            this._eventPurchpurchases(this.target)
+        }
+        if (this.target && this.target.name === 'favorites') {
+            this._eventFavorites(this.target);
+        }
+        if (this.target && this.target.name === 'subscribe') {
+            this._eventSubscribe(this.target)
+        }
     }
-    addEvent() {
-        this.selector.addEventListener('click', this.followEvent)
+    _eventUserNotAuth = (e) => {
+        super._eventUserAuth(e);
+        if (this.target && this.target.name === 'purchpurchases') {
+            this._eventPurchpurchases(this.target)
+        }
     }
-    eventFavorites = (target) => {
+    _eventSubscribe = (target) => {
         const cardId = target.closest(this.card).getAttribute('data-id');
-        target.setAttribute('disabled', true);
-
         if(target.hasAttribute('data-out')) {
-            this.api.addFavorites(cardId)
-                .then( e => {
-                    target.querySelector('.icon-favorite').classList.add('icon-favorite_active');
-                    target.removeAttribute('data-out');
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.subscribe.addSubscribe(target,cardId)
         } else {
-            this.api.removeFavorites(cardId)
-                .then( e => {
-                    target.querySelector('.icon-favorite').classList.remove('icon-favorite_active');
-                    target.removeAttribute('data-out');
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.subscribe.removeSubscribe(target,cardId)
         }
     }
-    eventSubscribe = (target) => {
+    _eventFavorites = (target) => {
         const cardId = target.closest(this.card).getAttribute('data-id');
-        target.setAttribute('disabled', true);
         if(target.hasAttribute('data-out')) {
-            this.api.addSubscriptions(cardId)
-                .then( e => {
-                    target.innerHTML = `<span class="icon-check button__icon"></span> Отписаться от автора`;
-                    target.classList.remove('button_style_blue');
-                    target.classList.add('button_style_light-blue-outline');
-                    target.removeAttribute('data-out');
-                    this.counter('add');
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.favorites.addFavorites(target,cardId, this.tooltipDel)
         } else {
-            this.api.removeSubscriptions(cardId)
-                .then( e => {
-                    target.innerHTML = `Подписаться на автора`;
-                    target.classList.add('button_style_blue');
-                    target.classList.remove('button_style_light-blue-outline');
-                    target.setAttribute('data-out', true);
-                    this.counter('remove')
-                })
-                .catch( e => {
-                    console.log(e)
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.favorites.removeFavorites(target,cardId, this.tooltipAdd)
         }
     }
-    eventPurchpurchases = (target) => {
+    tooltipAdd = () => {
+        const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
+        item.textContent = "Добавить в избранное"
+    }
+    tooltipDel = () => {
+        const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
+        item.textContent = "Убрать из избранного"
+    }
+    _eventPurchpurchases = (target) => {
         const cardId = target.closest(this.card).getAttribute('data-id');
-        target.setAttribute('disabled', true);
         if(target.hasAttribute('data-out')) {
-            this.api.addPurchases(cardId)
-                .then( e => {
-                    target.innerHTML = `<span class="icon-check button__icon"></span> Рецепт добавлен`;
-                    target.classList.remove('button_style_blue');
-                    target.classList.add('button_style_light-blue-outline');
-                    target.removeAttribute('data-out');
-                    this.counter('add');
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.purchpurachases.addPurchases(target,cardId,this.counter.minusCounter)
         } else {
-            this.api.removePurchases(cardId)
-                .then( e => {
-                    target.innerHTML = `<span class="icon-plus button__icon"></span>Добавить в покупки`;
-                    target.classList.add('button_style_blue');
-                    target.classList.remove('button_style_light-blue-outline');
-                    target.setAttribute('data-out', true);
-                    this.counter('remove')
-                })
-                .catch( e => {
-                    console.log(e)
-                })
-                .finally(e => {
-                    target.removeAttribute('disabled');
-                })
+            this.button.purchpurachases.removePurchases(target,cardId,this.counter.minusCounter)
         }
     }
-    followEvent (e)  {
-        e.preventDefault();
-        if (this.userAuth) {
-            this.eventsUserAuth(e)
-        } else {
-            this.eventsUserNotAuth(e)
-        }
-    }
-    eventsUserAuth (e) {
-        const target = e.target.closest('button');
-        if (target && target.name === 'purchpurchases') {
-            this.eventPurchpurchases(target)
-        }
-        if (target && target.name === 'favorites') {
-            this.eventFavorites(target)
-        }
-        if (target&& target.name === 'subscribe') {
-            this.eventSubscribe(target)
-        }
-    }
-    eventsUserNotAuth (e) {
-        const target = e.target.closest('button');
-        if (target && target.name === 'purchpurchases') {
-            this.eventPurchpurchases(target)
-        }
-    }
-
 }
+

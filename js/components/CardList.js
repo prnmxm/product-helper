@@ -1,93 +1,34 @@
-class CardList {
-    constructor(selector, api, counter, userAuth, card) {
-        this.selector = selector;
-        this.api = api;
-        this.counter = counter;
-        this.userAuth = userAuth;
-        this.card = card;
-        this.followEvent = this.followEvent.bind(this)
+class CardList extends MainCards {
+    _eventUserAuth (e) {
+        super._eventUserAuth(e);
+        if (this.target && this.target.name === 'purchpurchases') {
+            this._eventPurchpurchases(this.target)
+        }
+        if (this.target && this.target.name === 'favorites') {
+            this._eventFavorites(this.target);
+        }
     }
-    addEvent() {
-        this.selector.addEventListener('click', this.followEvent)
+    _eventUserNotAuth = (e) => {
+        super._eventUserAuth(e);
+        if (this.target && this.target.name === 'purchpurchases') {
+            this._eventPurchpurchases(this.target)
+        }
     }
-    eventFavorites = (target) => {
-            const cardId = target.closest(this.card).getAttribute('data-id');
-            target.setAttribute('disabled', true);
-
+    _eventFavorites = (target) => {
+        const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
-                this.api.addFavorites(cardId)
-                    .then( e => {
-                        target.querySelector('.icon-favorite').classList.add('icon-favorite_active');
-                        target.removeAttribute('data-out');
-                    })
-                    .finally(e => {
-                        target.removeAttribute('disabled');
-                    })
-            } else {
-                this.api.removeFavorites(cardId)
-                    .then( e => {
-                        target.querySelector('.icon-favorite').classList.remove('icon-favorite_active');
-                        target.removeAttribute('data-out');
-                    })
-                    .finally(e => {
-                        target.removeAttribute('disabled');
-                    })
-        }
-    }
-    eventPurchpurchases = (target) => {
-            const cardId = target.closest(this.card).getAttribute('data-id');
-            target.setAttribute('disabled', true);
-            if(target.hasAttribute('data-out')) {
-                this.api.addPurchases(cardId)
-                    .then( e => {
-                        target.innerHTML = `<span class="icon-check button__icon"></span> Рецепт добавлен`;
-                        target.classList.remove('button_style_light-blue');
-                        target.classList.add('button_style_light-blue-outline');
-                        target.removeAttribute('data-out');
-                        this.counter('add');
-                    })
-                    .finally(e => {
-                        target.removeAttribute('disabled');
-                    })
-            } else {
-                this.api.removePurchases(cardId)
-                    .then( e => {
-                        target.innerHTML = `<span class="icon-plus button__icon"></span>Добавить в покупки`;
-                        target.classList.add('button_style_light-blue');
-                        target.classList.remove('button_style_light-blue-outline');
-                        target.setAttribute('data-out', true);
-                        this.counter('remove')
-                    })
-                    .catch( e => {
-                        console.log(e)
-                    })
-                    .finally(e => {
-                        target.removeAttribute('disabled');
-                    })
-            }
-    }
-    followEvent (e)  {
-        e.preventDefault();
-        if (this.userAuth) {
-            this.eventsUserAuth(e)
+            this.button.favorites.addFavorites(target,cardId)
         } else {
-            this.eventsUserNotAuth(e)
+            this.button.favorites.removeFavorites(target,cardId)
         }
     }
-    eventsUserAuth (e) {
-        const target = e.target.closest('button');
-        if (target && target.name === 'purchpurchases') {
-            this.eventPurchpurchases(target)
-        }
-        if (target && target.name === 'favorites') {
-            this.eventFavorites(target)
+    _eventPurchpurchases = (target) => {
+        const cardId = target.closest(this.card).getAttribute('data-id');
+        if(target.hasAttribute('data-out')) {
+            this.button.purchpurachases.addPurchases(target,cardId, this.counter.plusCounter)
+        } else {
+            this.button.purchpurachases.removePurchases(target,cardId,this.counter.minusCounter);
 
-        }
-    }
-    eventsUserNotAuth (e) {
-        const target = e.target.closest('button');
-        if (target && target.name === 'purchpurchases') {
-            this.eventPurchpurchases(target)
         }
     }
 }

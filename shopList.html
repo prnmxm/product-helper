@@ -17,7 +17,8 @@
                 <li class="nav__item"><a href="#" class="nav__link link">Мои подписки</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Создать рецепт</a></li>
                 <li class="nav__item"><a href="#" class="nav__link link">Избранное</a></li>
-                <li class="nav__item nav__item_active"><a href="#" class="nav__link link">Список покупок</a></li>
+                <li class="nav__item"><a href="#" class="nav__link link">Список покупок</a><span class="badge badge_style_blue nav__badge" id="counter"></span></li>
+
 
             </ul>
             <ul class="nav__items list">
@@ -33,7 +34,7 @@
     </div>
     <div class="card-list card-list_column">
         <ul class="shopping-list">
-            <li class="shopping-list__item">
+            <li class="shopping-list__item" data-id="111">
                 <div class="recipe recipe_reverse">
                     <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
@@ -41,7 +42,7 @@
                 </div>
                 <a href="#" class="shopping-list__button link">Удалить</a>
             </li>
-            <li class="shopping-list__item">
+            <li class="shopping-list__item" data-id="1112">
                 <div class="recipe recipe_reverse">
                     <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
@@ -49,7 +50,7 @@
                 </div>
                 <a href="#" class="shopping-list__button link">Удалить</a>
             </li>
-            <li class="shopping-list__item">
+            <li class="shopping-list__item" data-id="1113">
                 <div class="recipe recipe_reverse">
                     <img src="./images/testCardImg.png" alt="какой-то текст" class="recipe__image recipe__image_big">
                     <h3 class="recipe__title">Французские тосты</h3>
@@ -72,5 +73,10 @@
         </ul>
     </div>
 </footer>
+<script src="./js/config/config.js"></script>
+<script src="./js/components/Header.js"></script>
+<script src="./js/components/ShopList.js"></script>
+<script src="./js/api/Api.js"></script>
+<script src="shopList.js"></script>
 </body>
 </html>

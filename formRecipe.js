@@ -12,8 +12,7 @@ const header = new Header(counterId, api);
 header.setCounter();
 
 
-
-nameIngredient.addEventListener('input', (e)=>{
+nameIngredient.addEventListener('input', async(e)=>{
     api.getIngredients(e.target.value).then(e=>{
         if(e.length !== 0 ) {
             const items = e.map( elem => {
