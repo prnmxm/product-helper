@@ -1,23 +1,23 @@
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 class Api {
-  constructor(apiUrl) {
-    this.apiUrl = proxyurl + apiUrl;
-  }
-  getPurchases = () => {
+    constructor(apiUrl) {
+        this.apiUrl = proxyurl + apiUrl;
+    }
+  getPurchases () {
     return fetch(`${this.apiUrl}purchases`, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  addPurchases = (id) => {
+  addPurchases (id) {
     return fetch(`${this.apiUrl}purchases`, {
       method: 'POST',
       headers: {
@@ -28,13 +28,13 @@ class Api {
       })
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  removePurchases = (id) => {
+  removePurchases (id){
     return fetch(`${this.apiUrl}purchases/${id}`, {
       method: 'DELETE',
       headers: {
@@ -42,13 +42,13 @@ class Api {
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  addSubscriptions = (id) => {
+  addSubscriptions(id) {
     return fetch(`${this.apiUrl}subscriptions`, {
       method: 'POST',
       headers: {
@@ -59,13 +59,13 @@ class Api {
       })
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  removeSubscriptions = (id) => {
+  removeSubscriptions (id) {
     return fetch(`${this.apiUrl}subscriptions/${id}`, {
       method: 'DELETE',
       headers: {
@@ -73,13 +73,13 @@ class Api {
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  addFavorites = (id) => {
+  addFavorites (id)  {
     return fetch(`${this.apiUrl}favorites`, {
       method: 'POST',
       headers: {
@@ -90,13 +90,13 @@ class Api {
       })
     })
         .then( e => {
-          if(e.ok) {
-            return e.json()
-          }
-          return Promise.reject(e.statusText)
+            if(e.ok) {
+                return e.json()
+            }
+            return Promise.reject(e.statusText)
         })
   }
-  removeFavorites = (id) => {
+  removeFavorites (id) {
     return fetch(`${this.apiUrl}favorites/${id}`, {
       method: 'DELETE',
       headers: {
@@ -104,13 +104,13 @@ class Api {
       }
     })
         .then( e => {
-          if(e.ok) {
-            return e.json()
-          }
-          return Promise.reject(e.statusText)
+            if(e.ok) {
+                return e.json()
+            }
+            return Promise.reject(e.statusText)
         })
   }
-    getIngredients = (text) => {
+    getIngredients  (text)  {
         return fetch(`${this.apiUrl}ingredients?query=${text}`, {
             headers: {
                 'Content-Type': 'application/json'

@@ -6,7 +6,7 @@ class Throttle {
         this.time = time;
         this.lastCallTimer = null;
     }
-    call = (args) => {
+    call  (args)  {
         this.previousCall = this.lastCall;
         this.lastCall = Date.now();
         if(this.previousCall && (this.lastCall - this.previousCall) <= this.time) {

@@ -12,6 +12,9 @@ class Subscribe {
                 target.classList.add(this.config.active.class);
                 target.removeAttribute(this.config.attr);
             })
+            .catch( e => {
+                console.log(e)
+            })
             .finally(e => {
                 target.removeAttribute('disabled');
             })

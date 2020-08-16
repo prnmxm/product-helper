@@ -1,7 +1,7 @@
 const container = document.querySelector('.card-list');
 const counterId = document.querySelector('#counter');
 const api = new Api(apiUrl);
-const header = new Header(counterId, api);
+const header = new Header(counterId);
 const configButton = {
     subscribe: {
         attr: 'data-out',
@@ -11,7 +11,7 @@ const configButton = {
         },
         active: {
             class: 'button_style_light-blue-outline',
-            text: `Подписаться от автора`
+            text: `Подписаться на автора`
         }
     }
 }

@@ -3,14 +3,16 @@ class MainCards {
         this.container = container;
         this.card = card;
         this.userAuth = userAuth;
-        this.counter = counter
+        this.counter = counter;
         this.target = null;
         this.button = button;
-        this._eventUserAuth = this._eventUserAuth.bind(this)
+        this._eventUserAuth = this._eventUserAuth.bind(this);
+        this._eventUserNotAuth = this._eventUserNotAuth.bind(this);
+
     }
     addEvent() {
-        const event = this._access();
-        this.container.addEventListener('click', event)
+        const eventCb = this._access();
+        this.container.addEventListener('click', eventCb)
     }
     _access () {
         if(this.userAuth) {
