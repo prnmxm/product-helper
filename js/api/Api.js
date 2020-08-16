@@ -9,10 +9,10 @@ class Api {
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
   addPurchases (id) {
@@ -26,10 +26,10 @@ class Api {
       })
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
   removePurchases (id){
@@ -40,10 +40,10 @@ class Api {
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
   addSubscriptions(id) {
@@ -57,10 +57,10 @@ class Api {
       })
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
   removeSubscriptions (id) {
@@ -71,13 +71,13 @@ class Api {
       }
     })
       .then( e => {
-        if(e.ok) {
-          return e.json()
-        }
-        return Promise.reject(e.statusText)
+          if(e.ok) {
+              return e.json()
+          }
+          return Promise.reject(e.statusText)
       })
   }
-  addFavorites = (id) => {
+  addFavorites (id)  {
     return fetch(`${this.apiUrl}favorites`, {
       method: 'POST',
       headers: {
@@ -88,10 +88,10 @@ class Api {
       })
     })
         .then( e => {
-          if(e.ok) {
-            return e.json()
-          }
-          return Promise.reject(e.statusText)
+            if(e.ok) {
+                return e.json()
+            }
+            return Promise.reject(e.statusText)
         })
   }
   removeFavorites (id) {
@@ -102,10 +102,10 @@ class Api {
       }
     })
         .then( e => {
-          if(e.ok) {
-            return e.json()
-          }
-          return Promise.reject(e.statusText)
+            if(e.ok) {
+                return e.json()
+            }
+            return Promise.reject(e.statusText)
         })
   }
     getIngredients  (text)  {

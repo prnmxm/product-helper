@@ -7,13 +7,13 @@ const cantidad = document.querySelector('#cantidad')
 const addIng = document.querySelector('#addIng');
 
 const api = new Api(apiUrl);
-const header = new Header(counterId, api);
+const header = new Header(counterId);
 
 header.setCounter();
 
 
 nameIngredient.addEventListener('input', async(e)=>{
-    api.getIngredients(e.target.value).then(function (e) {
+    api.getIngredients(e.target.value).then( e => {
         if(e.length !== 0 ) {
             const items = e.map( elem => {
                 return `<a class="form__item-list" data-val="${elem.dimension}"">${elem.title}</a>`
@@ -22,15 +22,18 @@ nameIngredient.addEventListener('input', async(e)=>{
             formDropdownItems.innerHTML = items;
         }
     })
+        .catch( e => {
+            console.log(e)
+        })
     })
-formDropdownItems.addEventListener('click', function (e) {
+formDropdownItems.addEventListener('click', e => {
     if (e.target.classList.contains('form__item-list')) {
         nameIngredient.value = e.target.textContent;
         formDropdownItems.style.display = ''
         cantidadVal.textContent = e.target.getAttribute('data-val');
     }
 })
-addIng.addEventListener('click', function (e) {
+addIng.addEventListener('click', e => {
     if(nameIngredient.value && cantidad.value) {
         formFieldIngredinet.insertAdjacentHTML('afterend',`<div class="form__field-item-ingredient">${nameIngredient.value} ${cantidad.value} ${cantidadVal.textContent}</div>`)
         nameIngredient.value = ''

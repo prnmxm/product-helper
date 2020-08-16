@@ -1,7 +1,7 @@
 const container = document.querySelector('.single-card');
 const counterId = document.querySelector('#counter');
 const api = new Api(apiUrl);
-const header = new Header(counterId, api);
+const header = new Header(counterId);
 
 const configButton = {
     purchpurachases: {

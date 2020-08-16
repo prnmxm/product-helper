@@ -13,11 +13,11 @@ class ShopList {
         if(target.classList.contains('shopping-list__button')) {
             const item = target.closest('.shopping-list__item');
             this.api.removePurchases(item.getAttribute('data-id'))
-                .then(e=>{
+                .then( e => {
                     item.remove();
                     this.counter.minusCounter();
                 })
-                .catch(e=>{
+                .catch( e => {
                     console.log(e)
                 })
         }

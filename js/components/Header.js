@@ -3,9 +3,9 @@ class Header {
         this.counter = counter;
         this.api = api;
         this.counterNum = null;
-        this.plusCounter = this.plusCounter.bind(this)
-        this.minusCounter = this.minusCounter.bind(this)
-        this.setCounter = this.setCounter.bind(this)
+        this.plusCounter = this.plusCounter.bind(this);
+        this.minusCounter = this.minusCounter.bind(this);
+        this.setCounter = this.setCounter.bind(this);
     }
 
     plusCounter  ()  {

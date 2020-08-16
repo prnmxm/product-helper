@@ -1,4 +1,9 @@
 class SingleCard extends MainCards{
+    constructor(container, card, counter, api, userAuth,button) {
+        super(container, card, counter, api, userAuth,button);
+        this.tooltipAdd = this.tooltipAdd.bind(this);
+        this.tooltipDel = this.tooltipDel.bind(this)
+    }
     _eventUserAuth (e) {
         super._eventUserAuth(e);
         if (this.target && this.target.name === 'purchpurchases') {
@@ -34,10 +39,10 @@ class SingleCard extends MainCards{
         }
     }
     tooltipAdd  () {
-        const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
+        const item = this.target.closest('.single-card').querySelector('.single-card__favorite-tooltip');
         item.textContent = "Добавить в избранное"
     }
-    tooltipDel = () => {
+    tooltipDel () {
         const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
         item.textContent = "Убрать из избранного"
     }

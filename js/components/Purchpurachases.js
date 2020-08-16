@@ -2,9 +2,10 @@ class Purchpurachases {
     constructor(config, api) {
         this.config = config;
         this.api = api;
+        this.addPurchases = this.addPurchases.bind(this)
     }
     addPurchases (target,cardId, callBack) {
-        target.setAttribute('disabled', true)
+        target.setAttribute('disabled', true);
         this.api.addPurchases(cardId)
             .then( e => {
                 target.innerHTML = this.config.active.text;
@@ -12,6 +13,9 @@ class Purchpurachases {
                 target.classList.add(this.config.active.class);
                 target.removeAttribute(this.config.attr);
                 callBack&&callBack();
+            })
+            .catch( e => {
+                console.log(e)
             })
             .finally(e => {
                 target.removeAttribute('disabled');
@@ -26,13 +30,13 @@ class Purchpurachases {
                 target.classList.remove(this.config.active.class);
                 target.setAttribute(this.config.attr, true);
                 callBack&&callBack();
-
             })
             .catch( e => {
                 console.log(e)
             })
             .finally(e => {
                 target.removeAttribute('disabled');
+
             })
     };
 }
