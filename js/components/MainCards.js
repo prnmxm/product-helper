@@ -6,7 +6,9 @@ class MainCards {
         this.counter = counter
         this.target = null;
         this.button = button;
-        this._eventUserAuth = this._eventUserAuth.bind(this)
+        this._eventUserAuth = this._eventUserAuth.bind(this);
+        this._eventUserNotAuth = this._eventUserNotAuth.bind(this);
+
     }
     addEvent() {
         const event = this._access();

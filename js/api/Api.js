@@ -1,9 +1,8 @@
-
 class Api {
-  constructor(apiUrl) {
-    this.apiUrl = apiUrl;
-  }
-  getPurchases = () => {
+    constructor(apiUrl) {
+        this.apiUrl = apiUrl;
+    }
+  getPurchases () {
     return fetch(`${this.apiUrl}purchases`, {
       headers: {
         'Content-Type': 'application/json'
@@ -16,7 +15,7 @@ class Api {
         return Promise.reject(e.statusText)
       })
   }
-  addPurchases = (id) => {
+  addPurchases (id) {
     return fetch(`${this.apiUrl}purchases`, {
       method: 'POST',
       headers: {
@@ -33,7 +32,7 @@ class Api {
         return Promise.reject(e.statusText)
       })
   }
-  removePurchases = (id) => {
+  removePurchases (id){
     return fetch(`${this.apiUrl}purchases/${id}`, {
       method: 'DELETE',
       headers: {
@@ -47,7 +46,7 @@ class Api {
         return Promise.reject(e.statusText)
       })
   }
-  addSubscriptions = (id) => {
+  addSubscriptions(id) {
     return fetch(`${this.apiUrl}subscriptions`, {
       method: 'POST',
       headers: {
@@ -64,7 +63,7 @@ class Api {
         return Promise.reject(e.statusText)
       })
   }
-  removeSubscriptions = (id) => {
+  removeSubscriptions (id) {
     return fetch(`${this.apiUrl}subscriptions/${id}`, {
       method: 'DELETE',
       headers: {
@@ -95,7 +94,7 @@ class Api {
           return Promise.reject(e.statusText)
         })
   }
-  removeFavorites = (id) => {
+  removeFavorites (id) {
     return fetch(`${this.apiUrl}favorites/${id}`, {
       method: 'DELETE',
       headers: {
@@ -109,7 +108,7 @@ class Api {
           return Promise.reject(e.statusText)
         })
   }
-    getIngredients = (text) => {
+    getIngredients  (text)  {
         return fetch(`${this.apiUrl}ingredients?query=${text}`, {
             headers: {
                 'Content-Type': 'application/json'

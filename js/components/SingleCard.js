@@ -11,13 +11,13 @@ class SingleCard extends MainCards{
             this._eventSubscribe(this.target)
         }
     }
-    _eventUserNotAuth = (e) => {
+    _eventUserNotAuth  (e)  {
         super._eventUserAuth(e);
         if (this.target && this.target.name === 'purchpurchases') {
             this._eventPurchpurchases(this.target)
         }
     }
-    _eventSubscribe = (target) => {
+    _eventSubscribe  (target)  {
         const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
             this.button.subscribe.addSubscribe(target,cardId)
@@ -25,7 +25,7 @@ class SingleCard extends MainCards{
             this.button.subscribe.removeSubscribe(target,cardId)
         }
     }
-    _eventFavorites = (target) => {
+    _eventFavorites  (target)  {
         const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
             this.button.favorites.addFavorites(target,cardId, this.tooltipDel)
@@ -33,7 +33,7 @@ class SingleCard extends MainCards{
             this.button.favorites.removeFavorites(target,cardId, this.tooltipAdd)
         }
     }
-    tooltipAdd = () => {
+    tooltipAdd  () {
         const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
         item.textContent = "Добавить в избранное"
     }
@@ -41,10 +41,10 @@ class SingleCard extends MainCards{
         const item = this.target.closest('.single-card__favorite').querySelector('.single-card__favorite-tooltip');
         item.textContent = "Убрать из избранного"
     }
-    _eventPurchpurchases = (target) => {
+    _eventPurchpurchases  (target)  {
         const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
-            this.button.purchpurachases.addPurchases(target,cardId,this.counter.minusCounter)
+            this.button.purchpurachases.addPurchases(target,cardId,this.counter.plusCounter)
         } else {
             this.button.purchpurachases.removePurchases(target,cardId,this.counter.minusCounter)
         }

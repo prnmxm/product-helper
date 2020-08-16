@@ -8,13 +8,13 @@ class CardList extends MainCards {
             this._eventFavorites(this.target);
         }
     }
-    _eventUserNotAuth = (e) => {
+    _eventUserNotAuth  (e)  {
         super._eventUserAuth(e);
         if (this.target && this.target.name === 'purchpurchases') {
             this._eventPurchpurchases(this.target)
         }
     }
-    _eventFavorites = (target) => {
+    _eventFavorites  (target) {
         const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
             this.button.favorites.addFavorites(target,cardId)
@@ -22,7 +22,7 @@ class CardList extends MainCards {
             this.button.favorites.removeFavorites(target,cardId)
         }
     }
-    _eventPurchpurchases = (target) => {
+    _eventPurchpurchases  (target)  {
         const cardId = target.closest(this.card).getAttribute('data-id');
         if(target.hasAttribute('data-out')) {
             this.button.purchpurachases.addPurchases(target,cardId, this.counter.plusCounter)
