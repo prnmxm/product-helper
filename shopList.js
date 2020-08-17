@@ -5,4 +5,3 @@ const header = new Header(counterId);
 
 const shopList = new ShopList(container, header, api);
 shopList.addEvent();
-header.setCounter();

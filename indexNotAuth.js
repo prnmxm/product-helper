@@ -22,6 +22,5 @@ const cardList = new CardList(container, '.card', header, api, false, {
 });
 
 cardList.addEvent();
-header.setCounter();
 
 

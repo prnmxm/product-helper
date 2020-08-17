@@ -23,6 +23,5 @@ const singleCard = new SingleCard(container, '.single-card', header, api, false,
     purchpurachases,
 });
 singleCard.addEvent();
-header.setCounter();
 
 
