@@ -45,6 +45,8 @@
 @import "../blocks/form/__dropdown/form__dropdown.css";
 @import "../blocks/form/__field-item-ingredient/form__field-item-ingredient.css";
 @import "../blocks/form/__footer/form__footer.css";
+@import "../blocks/form/__field-item-delete/form__field-item-delete.css";
+
 
 @import "../blocks/tags/tags.css";
 @import "../blocks/tags/__item/tags__item.css";

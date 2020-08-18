@@ -21,7 +21,7 @@ class Favorites {
         this.api.removeFavorites(cardId)
             .then( e => {
                 target.innerHTML = this.config.default.text;
-                target.removeAttribute(this.config.attr);
+                target.setAttribute(this.config.attr, true);
                 callBack&&callBack()
             })
             .finally(e => {
