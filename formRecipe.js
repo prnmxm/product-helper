@@ -65,13 +65,29 @@ class Ingredients {
 
     }
     addIngredient () {
-        if(this.value.name !== 0 && this.value.unitsValue !== 0) {
+        if((this.value.name === 0  || this.value.name === null)  && this.value.unitsValue === 0) {
+            this.showInputError(this.inputSearch);
+            this.showInputError(this.inputUnits);
+        }
+        if(this.value.name === 0 || this.value.name === null) {
+            this.showInputError(this.inputSearch);
+        }
+        if(this.value.unitsValue === 0) {
+            this.showInputError(this.inputUnits);
+        }
+        if((this.value.name !== 0 && this.value.name !== null)  && this.value.unitsValue !== 0) {
             this.clearInput(this.inputSearch);
             this.clearInput(this.inputUnits);
             this.container.insertAdjacentElement('afterend',this.templateItem());
             this.selected = true;
             this.nullify();
         }
+    }
+    showInputError(input) {
+        input.classList.add('form__input_error');
+        setTimeout(()=> {
+            input.classList.remove('form__input_error');
+        },1000)
     }
     templateItem () {
         const data = this.value;
