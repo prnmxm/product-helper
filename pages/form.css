@@ -44,6 +44,7 @@
 @import "../blocks/form/__dropdown-items/form__dropdown-items.css";
 @import "../blocks/form/__dropdown/form__dropdown.css";
 @import "../blocks/form/__field-item-ingredient/form__field-item-ingredient.css";
+@import "../blocks/form/__footer/form__footer.css";
 
 @import "../blocks/tags/tags.css";
 @import "../blocks/tags/__item/tags__item.css";
@@ -72,5 +73,5 @@
 }
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
