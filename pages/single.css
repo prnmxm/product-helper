@@ -67,7 +67,7 @@
 * {
     box-sizing: border-box;
 }
-body, html {
+html,
+body {
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
 }
