@@ -37,7 +37,7 @@ class Ingredients {
             unitsLabel: 0
         };
         this.array = null;
-        this.selected = null;
+        this.selected = false;
         this.focusBoolean = false;
     }
     event() {
@@ -50,7 +50,7 @@ class Ingredients {
     focus () {
         this.inputSearch.addEventListener('input',this.eventSearch);
         this.focusBoolean = true;
-        if(this.search !== null && this.array !== null && this.selected === null) {
+        if(this.array !== null && this.selected === false &&  this.focusBoolean) {
             this.showDropDown();
         }
     }
@@ -69,7 +69,7 @@ class Ingredients {
             this.clearInput(this.inputSearch);
             this.clearInput(this.inputUnits);
             this.container.insertAdjacentElement('afterend',this.templateItem());
-
+            this.selected = true;
             this.nullify();
         }
     }
@@ -90,8 +90,8 @@ class Ingredients {
         if(e.target.classList.contains('form__field-item-delete')) {
             const item = e.target.closest('.form__field-item-ingredient');
             item.removeEventListener('click',this.eventDelete);
-            item.remove()
-        };
+            item.remove();
+        }
     };
     nullify () {
         this.search = null;
